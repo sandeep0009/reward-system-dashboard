@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Rohan",
+      "email": "rohan@gmail.com",
+      "password": "rohan@123",
+      "isAdmin": false
+    },
+    {
+      "id": "1",
+      "name": "mohak",
+      "email": "admin@gmail.com",
+      "password": "admin@123",
+      "isAdmin": true
+    },
+    {
+      "id": "2ebe",
+      "name": "sandeep shah",
+      "email": "temp23@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "239c",
+      "name": "SANDEEP KUMAR SHAH",
+      "email": "temp12@gmail.com",
+      "password": "123456"
+    }
+  ]
+}
