@@ -24,8 +24,6 @@ This app features:
 ---
 
 
----
-
 ## 🛠️ Setup & Usage
 
 1. **Install dependencies**
@@ -38,8 +36,7 @@ This app features:
 3. **RUN Json Server**
    ```bash
    npm run server-json
-
-4.**start Frontend on different terminal**
+4. **start Frontend on different terminal**
   ```bash
    npm run start
 
