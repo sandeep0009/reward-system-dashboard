@@ -24,6 +24,7 @@ const SignIn = () => {
   } = useForm({
     resolver: zodResolver(signInSchema),
   });
+  const navigate=useNavigate();
 
   const onSubmit = async (data) => {
     try {
@@ -35,9 +36,17 @@ const SignIn = () => {
       });
 
       if (res.data.length > 0) {
-        const user=res.data[0]
-        localStorage.setItem("isAdmin",user.isAdmin);
+        const user=res.data[0];
+        console.log(JSON.stringify(user))
+        localStorage.setItem('user', JSON.stringify(user));
         dispatch(getUserInfo(user));
+        if(user.isAdmin){
+          navigate('/admin-dasboard');
+        }
+        else{
+          navigate('/');
+
+        }
       } else {
         setError("email", { message: "Invalid email or password" });
         setError("password", { message: "Invalid email or password" });

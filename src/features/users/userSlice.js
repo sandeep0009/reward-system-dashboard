@@ -1,10 +1,12 @@
 
 
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice,createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState={
-    userInfo:null,
+    userInfo:JSON.parse(localStorage.getItem('user')) || null,
+
 }
+
 
 export const userSlice=createSlice({
     name:'userInformation',
@@ -15,8 +17,8 @@ export const userSlice=createSlice({
 
         },
         logoutUserInfro:(state)=>{
-            state.userInfo=null
-
+            state.userInfo=null;
+            localStorage.removeItem('user');
         }
     }
 });

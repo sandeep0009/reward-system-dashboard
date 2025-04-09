@@ -5,10 +5,11 @@
       "name": "Rohan",
       "email": "rohan@gmail.com",
       "password": "rohan@123",
-      "isAdmin": false
+      "isAdmin": false,
+      "points":50
     },
     {
-      "id": "1",
+      "id": "2",
       "name": "mohak",
       "email": "admin@gmail.com",
       "password": "admin@123",
@@ -18,13 +19,16 @@
       "id": "2ebe",
       "name": "sandeep shah",
       "email": "temp23@gmail.com",
-      "password": "123456"
+      "password": "123456",
+      "isAdmin": false,
+      "points":120
     },
     {
       "id": "239c",
       "name": "SANDEEP KUMAR SHAH",
       "email": "temp12@gmail.com",
-      "password": "123456"
+      "password": "123456",
+      "points":200
     }
   ]
 }
