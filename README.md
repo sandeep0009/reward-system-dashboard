@@ -1,12 +1,45 @@
-# React + Vite
+# 🎁 Reward System Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, points-based reward system dashboard built using **React (Vite)**, **Redux Toolkit**, **TailwindCSS**, and **json-server** for simulating backend data.
 
-Currently, two official plugins are available:
+This app features:
+- 🎯 User authentication and role-based access (Admin/User)
+- 🏅 Points allocation for activities
+- 🛍️ Redeeming rewards based on points
+- 📊 Leaderboards and user stats
+- 🧾 Activity logs & redemption history
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React 19 + Vite** – Frontend framework
+- **Redux Toolkit** – State management
+- **TailwindCSS** – Styling
+- **MUI (Material UI)** – UI components
+- **json-server** – Mock REST API
+- **React Router** – Routing
+- **Zod + React Hook Form** – Form validation
+
+---
+
+
+---
+
+## 🛠️ Setup & Usage
+
+1. **Install dependencies**
+   ```bash
+   npm install
+
+2. **Create .env file**
+   ```bash
+   VITE_BACKEND=http://localhost:3000
+3. **RUN Json Server**
+   ```bash
+   npm run server-json
+
+4.**start Frontend on different terminal**
+  ```bash
+   npm run start
+
