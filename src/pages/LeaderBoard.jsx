@@ -1,18 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { getLeaderboard } from "../features/users/userApi";
+import { setLeaderboard } from "../features/users/userSlice";
 import { User } from "lucide-react";
 
 const LeaderBoard = () => {
-  const [topUsers, setTopUsers] = useState([]);
+  const dispatch = useDispatch();
+  const topUsers = useSelector((state) => state.user.leaderboard);
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
       const users = await getLeaderboard();
-      setTopUsers(users);
+      dispatch(setLeaderboard(users));
     };
 
     fetchLeaderboard();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="flex justify-center px-4 py-10">

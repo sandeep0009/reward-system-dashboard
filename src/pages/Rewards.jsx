@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import {
   Card,
   CardMedia,
@@ -13,13 +12,20 @@ import {
   InputLabel,
 } from "@mui/material";
 import { fetchRewards } from "../features/rewards/rewardApi";
+import { useDispatch, useSelector } from "react-redux";
+import { redeemAward } from "../features/rewards/rewardSlice";
+import { updateUser } from "../features/users/userApi";
 
 const Rewards = () => {
   const [rewards, setRewards] = useState([]);
   const [filteredRewards, setFilteredRewards] = useState([]);
-  const [userPoints, setUserPoints] = useState(0);
-  const [filter, setFilter] = useState("all");
 
+  const [filter, setFilter] = useState("all");
+  const dispatch = useDispatch();
+  const user=useSelector((state)=>state.user.userInfo);
+  const userPoints=user?.points;
+
+  
   useEffect(() => {
     const fetchReward = async () => {
       const data = await fetchRewards();
@@ -27,13 +33,7 @@ const Rewards = () => {
       setFilteredRewards(data);
     };
 
-    const fetchUser = () => {
-      const user = JSON.parse(localStorage.getItem("user"));
-      setUserPoints(user?.points || 0);
-    };
-
     fetchReward();
-    fetchUser();
   }, []);
 
   useEffect(() => {
@@ -46,13 +46,34 @@ const Rewards = () => {
     setFilteredRewards(sorted);
   }, [filter, rewards]);
 
-  const handleRedeem = (reward) => {
-    if (userPoints >= reward.points) {
-      alert(`You redeemed ${reward.title}!`);
-    } else {
-      alert(" Insufficient points to redeem this reward.");
+  const handleRedeem = async (reward) => {
+    if (!user || userPoints < reward.points) {
+      alert("Insufficient points to redeem this reward.");
+      return;
     }
+  
+    const newPoints = userPoints - reward.points;  
+    const updatedUser = { ...user, points: newPoints };
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+  
+    try {
+      await updateUser(user.id, updatedUser);  
+    } catch (error) {
+      console.error("Failed to update user points:", error);
+    }
+  
+    dispatch(
+      redeemAward({
+        rewardId: reward.id,
+        userId: user.id,
+        pointsRedeemed: reward.points,
+        timestamp: new Date().toISOString(),
+      })
+    );
+  
+    alert(`You redeemed "${reward.title}" for ${reward.points} points!`);
   };
+  
 
   return (
     <Container className="py-12">

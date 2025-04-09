@@ -2,7 +2,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  rewards: []
+  rewards: [],
+  redeemHistory:[]
 };
 
 export const rewardSlice = createSlice({
@@ -25,9 +26,18 @@ export const rewardSlice = createSlice({
     deleteReward: (state, action) => {
       const rewardId = action.payload;
       state.rewards = state.rewards.filter(reward => reward.id !== rewardId);
+    },
+    redeemAward:(state,action)=>{
+      const {redeemId,userId,pointsRedeemed}=action.payload;
+      state.redeemHistory.unshift({redeemId,userId,pointsRedeemed})
+
+    },
+    setRedeemHistory:(state,action)=>{
+      state.redeemHistory = action.payload;
+
     }
   }
 });
 
-export const { addRewards, getRewards, updateRewards, deleteReward } = rewardSlice.actions;
+export const { addRewards, getRewards, updateRewards, deleteReward,redeemAward,setRedeemHistory } = rewardSlice.actions;
 export default rewardSlice.reducer;

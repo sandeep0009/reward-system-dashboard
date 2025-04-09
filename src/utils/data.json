@@ -16,6 +16,14 @@
       "isAdmin": true
     },
     {
+      "id": "3",
+      "name": "Rohan verma",
+      "email": "rohan23@gmail.com",
+      "password": "rohan@123",
+      "isAdmin": false,
+      "points": 1750
+    },
+    {
       "id": "2ebe",
       "name": "sandeep shah",
       "email": "temp23@gmail.com",
@@ -56,13 +64,6 @@
       "points": 150
     },
     {
-      "id": "r3",
-      "title": "Coffee Mug",
-      "description": "A stylish mug to brighten your mornings.",
-      "image": "https://source.unsplash.com/featured/?mug",
-      "points": 80
-    },
-    {
       "id": "r4",
       "title": "Spotify Premium - 1 Month",
       "description": "Enjoy ad-free music for a month.",
@@ -87,6 +88,14 @@
       "title": "new mug github",
       "description": "github mug",
       "points": "3000"
+    }
+  ],
+  "redeem-history": [
+    {
+      "id": "1",
+      "userid": "1",
+      "rewardsid": "r4",
+      "pointredeem": 120
     }
   ]
 }

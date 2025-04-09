@@ -42,7 +42,7 @@ import {
           { name: "Manage Users", path: "/admin-dashboard" },
           { name: "Manage Activities", path: "/admin-dashboard/manage-activity" },
           { name: "Manage Rewards", path: "/admin-dashboard/manage-rewards" },
-          { name: "Analytics", path: "/admin/analytics" },
+          { name: "Analytics", path: "/admin-dashboard/manage-redeem" },
         ]
       : [
           { name: "My Profile", path: "/profile" },

@@ -12,6 +12,7 @@ import AdminDashboard from "./features/admin/AdminDashboard"
 import ProtectRoutes from "./components/ProtectRoute"
 import ManageActivities from "./features/admin/ManageActivities"
 import ManageRewards from "./features/admin/ManageRewards"
+import RedeemHistory from "./pages/RedeemHistory"
 function App() {
 
 
@@ -30,6 +31,7 @@ function App() {
       <Route path="/admin-dashboard" element={<ProtectRoutes children={<AdminDashboard/>}/>}/>
       <Route path="/admin-dashboard/manage-activity" element={<ProtectRoutes children={<ManageActivities/>}/>}/>
       <Route path="/admin-dashboard/manage-rewards" element={<ProtectRoutes children={<ManageRewards/>}/>}/>
+      <Route path="/admin-dashboard/manage-redeem" element={<ProtectRoutes children={<RedeemHistory/>}/>}/>
 
 
     </Routes>

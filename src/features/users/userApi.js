@@ -1,3 +1,4 @@
+import { identity } from "lodash";
 import { axiosInstance } from "../../utils/axios"
 
 
@@ -16,6 +17,7 @@ export const getLeaderboard=async()=>{
     
 }
 
-const getById=async(id)=>{
-
+export const updateUser=async(id,data)=>{
+  const res=await axiosInstance.put(`/users/${id}`,data);
+  return res.data
 }

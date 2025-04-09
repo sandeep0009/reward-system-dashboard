@@ -90,18 +90,21 @@ const ManageRewards = () => {
         </Button>
       </Box>
 
-      <Grid container spacing={3}>
+      <Grid container spacing={3}  width="100%">
         {rewards?.map((reward) => (
           <Grid item xs={12} sm={6} md={4} key={reward.id}>
             <Card
               sx={{
-                height: "300px",
+                height: "100%",
+                width:"100%",
+                maxWidth:"500px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
                 p: 2,
                 borderRadius: 3,
                 boxShadow: 4,
+              margin:"0 auto",
                 transition: "transform 0.2s, box-shadow 0.2s",
                 "&:hover": {
                   transform: "scale(1.03)",
@@ -111,7 +114,14 @@ const ManageRewards = () => {
             >
               <CardContent>
                 <Box display="flex" justifyContent="space-between" alignItems="center">
-                  <Typography variant="h6" fontWeight="bold" sx={{ color: "primary.main" }}>
+                  <Typography variant="h6" fontWeight="bold" 
+                   sx={{
+                    color: "primary.main",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    WebkitLineClamp: 3,
+                  }}>
                     {reward.title}
                   </Typography>
                   <Box>
@@ -123,7 +133,7 @@ const ManageRewards = () => {
                     </IconButton>
                   </Box>
                 </Box>
-                <Typography variant="body2" color="text.secondary" gutterBottom sx={{ mb: 2 }}>
+                <Typography variant="body2" color="text.secondary" gutterBottom sx={{ mb: 2 ,WebkitLineClamp: 3,}}>
                   {reward.description}
                 </Typography>
                 <Typography variant="body2" sx={{ fontWeight: "bold" }}>
