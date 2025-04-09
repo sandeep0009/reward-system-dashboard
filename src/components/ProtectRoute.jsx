@@ -1,16 +1,17 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ProtectRoutes=({children})=>{
-    const user=localStorage.getItem('user');
-    const navigate=useNavigate();
-    useEffect(()=>{
-        if(!user.isAdmin || user.isAdmin===undefined){
-            navigate('/signin');
-        }
-    },[]);
-    return <>{children}</>
-   
-}
+const ProtectRoutes = ({ children }) => {
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
 
-export default ProtectRoutes
+  useEffect(() => {
+    if (!user || !user.isAdmin) {
+      navigate("/signin");
+    }
+  }, [navigate, user]);
+
+  return <>{children}</>;
+};
+
+export default ProtectRoutes;

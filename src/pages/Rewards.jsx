@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getRewards } from "../features/rewards/rewardApi";
+
 import {
   Card,
   CardMedia,
@@ -12,6 +12,7 @@ import {
   FormControl,
   InputLabel,
 } from "@mui/material";
+import { fetchRewards } from "../features/rewards/rewardApi";
 
 const Rewards = () => {
   const [rewards, setRewards] = useState([]);
@@ -20,8 +21,8 @@ const Rewards = () => {
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
-    const fetchRewards = async () => {
-      const data = await getRewards();
+    const fetchReward = async () => {
+      const data = await fetchRewards();
       setRewards(data);
       setFilteredRewards(data);
     };
@@ -31,7 +32,7 @@ const Rewards = () => {
       setUserPoints(user?.points || 0);
     };
 
-    fetchRewards();
+    fetchReward();
     fetchUser();
   }, []);
 

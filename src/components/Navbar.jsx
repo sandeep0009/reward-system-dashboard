@@ -39,9 +39,9 @@ import {
   
     const menuItems = isAdmin
       ? [
-          { name: "Manage Users", path: "/admin/users" },
-          { name: "Manage Activities", path: "/admin/activities" },
-          { name: "Manage Rewards", path: "/admin/rewards" },
+          { name: "Manage Users", path: "/admin-dashboard" },
+          { name: "Manage Activities", path: "/admin-dashboard/manage-activity" },
+          { name: "Manage Rewards", path: "/admin-dashboard/manage-rewards" },
           { name: "Analytics", path: "/admin/analytics" },
         ]
       : [

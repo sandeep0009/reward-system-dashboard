@@ -75,7 +75,7 @@ const SignIn = () => {
         dispatch(getUserInfo(updatedUser));
   
         if (user.isAdmin) {
-          navigate("/admin-dasboard");
+          navigate("/admin-dashboard");
         } else {
           navigate("/");
         }

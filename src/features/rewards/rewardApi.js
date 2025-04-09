@@ -1,12 +1,13 @@
 import { axiosInstance } from "../../utils/axios"
 
 
-export const createRewards=async(data)=>{
-    const res=await axiosInstance.post('/rewards',{data});
+export const createRewards=async(e,data)=>{
+
+    const res=await axiosInstance.post('/rewards',data);
     return res.data;
 }
 
-export const getRewards=async()=>{
+export const fetchRewards=async()=>{
     const res=await axiosInstance.get('/rewards');
     return res.data;
 }

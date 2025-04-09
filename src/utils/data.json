@@ -6,7 +6,7 @@
       "email": "rohan@gmail.com",
       "password": "rohan@123",
       "isAdmin": false,
-      "points":50
+      "points": 50
     },
     {
       "id": "2",
@@ -21,63 +21,72 @@
       "email": "temp23@gmail.com",
       "password": "123456",
       "isAdmin": false,
-      "points":120
+      "points": 120
     },
     {
       "id": "239c",
       "name": "SANDEEP KUMAR SHAH",
       "email": "temp12@gmail.com",
       "password": "123456",
-      "points":200
+      "points": 200
     }
   ],
-  "activity":[
+  "activity": [
     {
-      "id":"1",
-      "userid":"1",
+      "id": "1",
+      "userid": "1",
       "type": "Task completion",
       "points": 15,
       "timestamp": "2025-04-09T12:34:56.789Z"
     }
   ],
-  
-    "rewards": [
-      {
-        "id": "r1",
-        "title": "Amazon Gift Card",
-        "description": "Get a ₹500 Amazon gift card.",
-        "image": "https://source.unsplash.com/featured/?gift",
-        "points": 100
-      },
-      {
-        "id": "r2",
-        "title": "Swag T-Shirt",
-        "description": "Exclusive swag T-shirt for our top users.",
-        "image": "https://source.unsplash.com/featured/?tshirt",
-        "points": 150
-      },
-      {
-        "id": "r3",
-        "title": "Coffee Mug",
-        "description": "A stylish mug to brighten your mornings.",
-        "image": "https://source.unsplash.com/featured/?mug",
-        "points": 80
-      },
-      {
-        "id": "r4",
-        "title": "Spotify Premium - 1 Month",
-        "description": "Enjoy ad-free music for a month.",
-        "image": "https://source.unsplash.com/featured/?music",
-        "points": 120
-      },
-      {
-        "id": "r5",
-        "title": "Custom Sticker Pack",
-        "description": "Cool sticker pack to personalize your stuff.",
-        "image": "https://source.unsplash.com/featured/?stickers",
-        "points": 60
-      }
-    ]
-  
-  
+  "rewards": [
+    {
+      "id": "r1",
+      "title": "Amazon Gift Card",
+      "description": "Get a ₹500 Amazon gift card.",
+      "image": "https://source.unsplash.com/featured/?gift",
+      "points": 100
+    },
+    {
+      "id": "r2",
+      "title": "Swag T-Shirt",
+      "description": "Exclusive swag T-shirt for our top users.",
+      "image": "https://source.unsplash.com/featured/?tshirt",
+      "points": 150
+    },
+    {
+      "id": "r3",
+      "title": "Coffee Mug",
+      "description": "A stylish mug to brighten your mornings.",
+      "image": "https://source.unsplash.com/featured/?mug",
+      "points": 80
+    },
+    {
+      "id": "r4",
+      "title": "Spotify Premium - 1 Month",
+      "description": "Enjoy ad-free music for a month.",
+      "image": "https://source.unsplash.com/featured/?music",
+      "points": 120
+    },
+    {
+      "id": "r5",
+      "title": "Custom Sticker Pack",
+      "description": "Cool sticker pack to personalize your stuff.",
+      "image": "https://source.unsplash.com/featured/?stickers",
+      "points": 60
+    },
+    {
+      "id": "ccb8",
+      "title": "new tshirt",
+      "description": "tshirt github",
+      "points": "100"
+    },
+    {
+      "id": "398d",
+      "title": "new mug github",
+      "description": "github mug",
+      "points": "3000"
+    }
+  ]
 }

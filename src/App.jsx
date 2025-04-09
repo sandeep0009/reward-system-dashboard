@@ -8,6 +8,10 @@ import Layout from "./utils/layout"
 import LeaderBoard from "./pages/LeaderBoard"
 import Activity from "./pages/Activity"
 import Rewards from "./pages/Rewards"
+import AdminDashboard from "./features/admin/AdminDashboard"
+import ProtectRoutes from "./components/ProtectRoute"
+import ManageActivities from "./features/admin/ManageActivities"
+import ManageRewards from "./features/admin/ManageRewards"
 function App() {
 
 
@@ -23,6 +27,11 @@ function App() {
       <Route path="/leaderBoard" element={<LeaderBoard/>}/>
       <Route path="/activities" element={<Activity/>}/>
       <Route path="/rewards" element={<Rewards/>}/>
+      <Route path="/admin-dashboard" element={<ProtectRoutes children={<AdminDashboard/>}/>}/>
+      <Route path="/admin-dashboard/manage-activity" element={<ProtectRoutes children={<ManageActivities/>}/>}/>
+      <Route path="/admin-dashboard/manage-rewards" element={<ProtectRoutes children={<ManageRewards/>}/>}/>
+
+
     </Routes>
     </Layout>
 

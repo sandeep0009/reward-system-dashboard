@@ -1,3 +1,4 @@
+import { axiosInstance } from "../../utils/axios";
 
 
 export const getActivitiesByUser = (userId) => {
@@ -5,3 +6,9 @@ export const getActivitiesByUser = (userId) => {
     return allActivities.filter((activity) => activity.userId === userId);
 };
   
+
+
+export const getAllActivites=async()=>{
+    const res=await axiosInstance.get('/activity');
+    return res.data;
+}
