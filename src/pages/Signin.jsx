@@ -34,18 +34,50 @@ const SignIn = () => {
           password: data.password,
         },
       });
-
+  
       if (res.data.length > 0) {
-        const user=res.data[0];
-        console.log(JSON.stringify(user))
-        localStorage.setItem('user', JSON.stringify(user));
-        dispatch(getUserInfo(user));
-        if(user.isAdmin){
-          navigate('/admin-dasboard');
-        }
-        else{
-          navigate('/');
+        const user = res.data[0];
+        const storedActivities = JSON.parse(localStorage.getItem("activities")) || [];
+  
+        const alreadyLoggedToday = storedActivities.some(
+          (a) =>
+            a.userId === user.id &&
+            a.type === "daily_login" &&
+            new Date(a.timestamp).toDateString() === new Date().toDateString()
+        );
+  
+        let pointsToAdd = 0;
 
+        if (!alreadyLoggedToday) {
+          const newActivity = {
+            userId: user.id,
+            type: "daily_login",
+            points: 5,
+            timestamp: new Date().toISOString(),
+          };
+        
+          const updatedActivities = [newActivity, ...storedActivities];
+          localStorage.setItem("activities", JSON.stringify(updatedActivities));
+          pointsToAdd = newActivity.points;
+        }
+
+        user.points = Number(user.points || 0) + pointsToAdd;
+        localStorage.setItem("user", JSON.stringify(user));
+        dispatch(getUserInfo(user));
+        
+  
+        const updatedUser = {
+          ...user,
+          points: (user.points || 0) + pointsToAdd,
+        };
+  
+        localStorage.setItem("user", JSON.stringify(updatedUser));
+        dispatch(getUserInfo(updatedUser));
+  
+        if (user.isAdmin) {
+          navigate("/admin-dasboard");
+        } else {
+          navigate("/");
         }
       } else {
         setError("email", { message: "Invalid email or password" });
@@ -55,6 +87,7 @@ const SignIn = () => {
       console.error("Signin error:", error);
     }
   };
+  
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">

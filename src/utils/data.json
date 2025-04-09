@@ -30,5 +30,14 @@
       "password": "123456",
       "points":200
     }
+  ],
+  "activity":[
+    {
+      "id":"1",
+      "userid":"1",
+      "type": "Task completion",
+      "points": 15,
+      "timestamp": "2025-04-09T12:34:56.789Z"
+    }
   ]
 }

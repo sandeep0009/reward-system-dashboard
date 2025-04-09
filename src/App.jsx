@@ -6,6 +6,7 @@ import Home from "./pages/Home"
 import UserProfile from "./features/users/UserProfile"
 import Layout from "./utils/layout"
 import LeaderBoard from "./pages/LeaderBoard"
+import Activity from "./pages/Activity"
 function App() {
 
 
@@ -19,6 +20,7 @@ function App() {
       <Route path="/signin" element={<SignIn/>}/>
       <Route path="/profile" element={<UserProfile/>}/>
       <Route path="/leaderBoard" element={<LeaderBoard/>}/>
+      <Route path="/activities" element={<Activity/>}/>
     </Routes>
     </Layout>
 
