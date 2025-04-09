@@ -7,6 +7,7 @@ import UserProfile from "./features/users/UserProfile"
 import Layout from "./utils/layout"
 import LeaderBoard from "./pages/LeaderBoard"
 import Activity from "./pages/Activity"
+import Rewards from "./pages/Rewards"
 function App() {
 
 
@@ -21,6 +22,7 @@ function App() {
       <Route path="/profile" element={<UserProfile/>}/>
       <Route path="/leaderBoard" element={<LeaderBoard/>}/>
       <Route path="/activities" element={<Activity/>}/>
+      <Route path="/rewards" element={<Rewards/>}/>
     </Routes>
     </Layout>
 
